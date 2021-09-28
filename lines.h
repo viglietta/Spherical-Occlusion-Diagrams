@@ -1,0 +1,27 @@
+extern int n;
+extern line *lines;
+extern graph *displayGraph;
+extern double snapDistance;
+
+double closestToLine(point p,int i,point *q);
+double closestToLines(point p,int ex,point *q,int *index);
+void recomputeEndpoint(endpoint *p);
+double connectEndpoint(int i,bool first,bool snap);
+double connectLine(int i,bool snap);
+void connectLines(bool snap);
+endpoint *newPointC(double x,double y,double z,bool b);
+endpoint *newPointP(point a);
+endpoint *newPointR(int i,double t);
+endpoint *newPointE(endpoint *e);
+void newLine(endpoint *p1,endpoint *p2);
+void graphToLines(graph *g,bool b);
+void switchLines(int i1,int i2);
+void deleteLine(int index);
+void freeLines();
+void freeLinesSaved();
+void saveLines(int untilN);
+void restoreLines();
+void rotateLines(double x,double y);
+double findClosestEndpoint(int x,int y,int *index,bool *first);
+void computeLineTypes();
+void extendLine(int index,double a1,double a2);
